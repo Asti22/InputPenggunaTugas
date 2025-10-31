@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -84,6 +86,14 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                         .fillMaxWidth(),
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ){
+                    Text(text = stringResource(R.string.label_nama), fontWeight = FontWeight.Bold)
+                    OutlinedTextField(
+                        value = nama,
+                        onValueChange = { nama = it },
+                        label = { Text(stringResource(R.string.nama)) },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
                 }
 
