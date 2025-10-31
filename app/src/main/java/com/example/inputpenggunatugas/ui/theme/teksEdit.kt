@@ -6,6 +6,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -18,6 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.inputpenggunatugas.R
 
@@ -59,6 +63,22 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                 color = Color.White,
                 fontWeight = FontWeight.Bold
             )
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(R.dimen.padding_medium)),
+            contentAlignment = Alignment.Center
+        ){
+            ElevatedCard (
+                elevation = CardDefaults.elevatedCardElevation(defaultElevation = 8.dp),
+                shape = RoundedCornerShape(dimensionResource(R.dimen.corner_radius)),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(dimensionResource(R.dimen.padding_small))
+            ){
+
+            }
         }
     }
 }
