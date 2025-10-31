@@ -1,6 +1,7 @@
 package com.example.inputpenggunatugas.ui.theme
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -77,6 +78,14 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                     .fillMaxWidth()
                     .padding(dimensionResource(R.dimen.padding_small))
             ){
+                Column(
+                    modifier = Modifier
+                        .padding(dimensionResource(R.dimen.padding_medium))
+                        .fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ){
+
+                }
 
             }
         }
