@@ -111,6 +111,14 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
 
                         }
                     }
+                    Text(text = stringResource(R.string.label_alamat), fontWeight = FontWeight.Bold)
+                    OutlinedTextField(
+                        value = alamat,
+                        onValueChange = { alamat = it },
+                        label = { Text(stringResource(R.string.alamat)) },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
                 }
 
