@@ -106,6 +106,8 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                                 onClick = { jenisKelamin = item }
                             )
                         ) {
+                            RadioButton(selected = status == item, onClick = { status = item })
+                            Text(text = item)
 
                         }
                     }
