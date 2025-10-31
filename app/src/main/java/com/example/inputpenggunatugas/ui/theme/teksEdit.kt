@@ -122,6 +122,27 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth()
                     )
+                    Text(
+                        text = stringResource(R.string.label_status),
+                        fontWeight = FontWeight.Bold
+                    )
+                    statusList.forEach { item ->
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier
+                                .selectable(
+                                    selected = status == item,
+                                    onClick = { status = item }
+                                )
+                                .padding(vertical = 4.dp)
+                        ) {
+                            RadioButton(
+                                selected = status == item,
+                                onClick = { status = item }
+                            )
+                            Text(text = item)
+                        }
+                    }
                     Button (
                         onClick = { /* aksi submit nanti */ },
                         modifier = Modifier
