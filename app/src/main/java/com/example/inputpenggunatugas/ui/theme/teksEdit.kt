@@ -130,6 +130,7 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF7E57C2)),
                         shape = RoundedCornerShape(12.dp)
                     ){
+                        Text(text = stringResource(R.string.submit), fontSize = 18.sp, color = Color.White)
 
                     }
 
