@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
@@ -35,7 +37,7 @@ import androidx.compose.ui.unit.sp
 import com.example.inputpenggunatugas.R
 
 @Composable
-fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Modifier
+fun FormulirPendaftaran(modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
     var nama by remember { mutableStateOf("") }
@@ -57,6 +59,7 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
         modifier = modifier
             .fillMaxSize()
             .background(Color(0xFFF5F5F5))
+            .verticalScroll(rememberScrollState())
     ) {
 
         Box(
@@ -114,18 +117,8 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
 
                         }
                     }
-                    Text(text = stringResource(R.string.label_alamat), fontWeight = FontWeight.Bold)
-                    OutlinedTextField(
-                        value = alamat,
-                        onValueChange = { alamat = it },
-                        label = { Text(stringResource(R.string.alamat)) },
-                        singleLine = true,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                    Text(
-                        text = stringResource(R.string.label_status),
-                        fontWeight = FontWeight.Bold
-                    )
+                    Text(text = stringResource(R.string.label_status), fontWeight = FontWeight.Bold)
+
                     statusList.forEach { item ->
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
@@ -143,6 +136,15 @@ fun FormulirPendaftaran(modifier: Modifier = Modifier) { // tambahkan default Mo
                             Text(text = item)
                         }
                     }
+                    Text(text = stringResource(R.string.label_alamat), fontWeight = FontWeight.Bold)
+                    OutlinedTextField(
+                        value = alamat,
+                        onValueChange = { alamat = it },
+                        label = { Text(stringResource(R.string.alamat)) },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
                     Button (
                         onClick = { /* aksi submit nanti */ },
                         modifier = Modifier
